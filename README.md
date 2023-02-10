@@ -88,9 +88,34 @@ where dept_emp_db.dept_no = 'd007';
 
 7. List each employee in the Sales and Development departments, including their employee number, last name, first name, and department name.
 
+Create view Dev_Sales as
+select *
+from departments_db
+where dept_name = 'Development'
+or dept_name = 'Sales'
+
+Create view Dev_Sales_emp_no as
+select dept_emp_db.emp_no, dept_emp_db.dept_no, Dev_Sales.dept_name
+from dept_emp_db
+inner join Dev_Sales on
+Dev_Sales.dept_no = dept_emp_db.dept_no
+
+
+select employees_db.emp_no as "Employee Number", employees_db.last_name as "Last Name", employees_db.first_name as "First Name", Dev_Sales_emp_no.dept_name as "Department Name"
+from employees_db
+inner join Dev_Sales_emp_no on
+employees_db.emp_no = Dev_Sales_emp_no.emp_no
+
+![image](/Sales_Development_Employees.PNG)
+
 8. List the frequency counts, in descending order, of all the employee last names (that is, how many employees share each last name).
 
+SELECT employees_db.last_name as "Last Name", COUNT(employees_db.last_name) AS "Number of occurences"
+FROM employees_db
+GROUP BY "Last Name"
+ORDER BY "Last Name" DESC;
 
+![image](/Last_Name_Occurences.PNG)
 
 ## Submission
 
