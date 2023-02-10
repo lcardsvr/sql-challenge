@@ -30,13 +30,51 @@ Import each CSV file into its corresponding SQL table.
 
 1. List the employee number, last name, first name, sex, and salary of each employee.
 
+select employees_db.emp_no as "Employee Number", employees_db.last_name as "Last Name", employees_db.first_name as "First Name", employees_db.sex as "Sex", salaries_db.salary as "Salary"
+from employees_db
+inner join salaries_db
+on employees_db.emp_no = salaries_db.emp_no;
+
+![image](/Employee_Info_Salary.PNG)
+
 2. List the first name, last name, and hire date for the employees who were hired in 1986.
+
+select employees_db.first_name as "First Name", employees_db.last_name as "Last Name", employees_db.hire_date as "Hire Date"
+from employees_db
+where employees_db.hire_date like '%/1986';
+
+![image](/Employee_hired_1986.PNG)
 
 3. List the manager of each department along with their department number, department name, employee number, last name, and first name.
 
+select dept_manager_db.dept_no as "Department Number", departments_db.dept_name as "Department Name", employees_db.emp_no as "Employee Number", employees_db.last_name as "Last Name", employees_db.first_name as "First Name" 
+from departments_db
+left join dept_manager_db
+on dept_manager_db.dept_no = departments_db.dept_no
+left join employees_db
+on dept_manager_db.emp_no = employees_db.emp_no;
+
+![image](/Managers_Per_Department.PNG)
+
 4. List the department number for each employee along with that employee’s employee number, last name, first name, and department name.
 
+select departments_db.dept_no as "Department Number",  employees_db.emp_no as "Employee Number", employees_db.last_name as "Last Name", employees_db.first_name as "First Name",departments_db.dept_name as "Department Name" 
+from departments_db
+left join dept_emp_db
+on dept_emp_db.dept_no = departments_db.dept_no
+left join employees_db
+on dept_emp_db.emp_no = employees_db.emp_no;
+
+![image](/Department_Number-Name_Employee_Name.PNG)
+
 5. List the first name, last name, and sex of each employee whose first name is Hercules and whose last name begins with the letter B.
+
+select employees_db.first_name as "First Name", employees_db.last_name as "Last Name", employees_db.sex as "Sex"
+from employees_db
+where employees_db.first_name = 'Hercules' 
+and employees_db.last_name like 'B%';
+
+![image](/Employees_Hercules_B.PNG)
 
 6. List each employee in the Sales department, including their employee number, last name, and first name.
 
