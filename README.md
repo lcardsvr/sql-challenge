@@ -78,6 +78,14 @@ and employees_db.last_name like 'B%';
 
 6. List each employee in the Sales department, including their employee number, last name, and first name.
 
+select dept_emp_db.dept_no as "Department Number",  employees_db.emp_no as "Employee Number", employees_db.last_name as "Last Name", employees_db.first_name as "First Name"
+from employees_db
+left join dept_emp_db
+on dept_emp_db.emp_no = employees_db.emp_no
+where dept_emp_db.dept_no = 'd007';
+
+![image](/Sales_Employees.PNG)
+
 7. List each employee in the Sales and Development departments, including their employee number, last name, first name, and department name.
 
 8. List the frequency counts, in descending order, of all the employee last names (that is, how many employees share each last name).
