@@ -11,7 +11,7 @@ For this project, you’ll design the tables to hold the data from the CSV files
 
 ERD Sketch
 
-![image](/EmployeeSQL_Sketch.png)
+![image](/EmployeeSQL_Sketch_02.png)
 
 
 ## Data Engineering
