@@ -9,22 +9,20 @@ For this project, you’ll design the tables to hold the data from the CSV files
 
 ## Data Modelling
 
-ERD Sketch
+The ERD Sketch for this challenge is presented below.
 
 ![image](/EmployeeSQL_Sketch_02.png)
 
 
 ## Data Engineering
 
-Use the provided information to create a table schema for each of the six CSV files. Be sure to do the following:
+Following the ERD Sketch above, the tables were created. Summaries are below for reference.
 
-Remember to specify the data types, primary keys, foreign keys, and other constraints.
+![image](/Table_Summaries.PNG)
 
-For the primary keys, verify that the column is unique. Otherwise, create a composite key Links to an external site., which takes two primary keys to uniquely identify a row.
+![image](/Table_Summaries_01.PNG)
 
-Be sure to create the tables in the correct order to handle the foreign keys.
-
-Import each CSV file into its corresponding SQL table.
+The code for the table creation and the data analysis is available under https://github.com/lcardsvr/sql-challenge/blob/main/SQL_Challenge_code.sql 
 
 ## Data Analysis
 
@@ -121,9 +119,7 @@ ORDER BY "Last Name" DESC;
 
 1. Submitted and available in GitHub under https://github.com/lcardsvr/sql-challenge
 
-2. Presentation notebook available under https://github.com/lcardsvr/Project-1---Looking-for-work-/blob/main/Looking_for_Work_presentation.ipynb
+2. SQL Code available under https://github.com/lcardsvr/sql-challenge/blob/main/SQL_Challenge_code.sql
 
-3. Scratch pad with more calculations, further summaries and datasets including the The Australian Skills Classification (ASC) information available under https://github.com/lcardsvr/Project-1---Looking-for-work-/blob/main/Looking_for_Work.ipynb
 
-4. To make use of the code a geoapify key is required.
 
